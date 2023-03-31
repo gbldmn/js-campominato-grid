@@ -6,22 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="file.css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 <body>
     <div class="container">
         <!-- parte iniziale titolo -->
         <header class="flex">
            <div class="box">
-            <h1 class="titolo"> <strong> Campo Minato</strong></h1>
+            <h1 class="titolo"> <strong> <i class="fa-solid fa-bomb"></i> Campo Minato  <i class="fa-solid fa-bomb"></i> </strong></h1>
            </div>
            <div class="box">
-            <button>play</button>
+            <button id="bottone">play</button>
            </div>
         </header>
+        <!-- contenitore griglia -->
  <div class="items">
-     <div class="griglia">
-            <div class="item active">
+        <!-- griglia contenente gli item -->
+     <div id="griglia">
+            <!-- <div class="item active">
             1
         </div>
         <div class="item">
@@ -32,7 +35,7 @@
         </div>
         <div class="item">
             4
-        </div> 
+        </div>  -->
      </div>
        
  </div>
