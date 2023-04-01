@@ -61,13 +61,24 @@ button {
  
 .item {
     border: 1px solid black;
-    width: calc(100% / 10);
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
     background-color:#c8c0c0;
     cursor: pointer;
+}
+
+.item_1 {
+    width: calc(100% / 10);
+}
+
+.item_2 {
+    width: calc(100% / 9);
+}
+
+.item_3 {
+    width: calc(100% / 7);
 }
 
    /* la classe che diventerà interattiva */

@@ -3,12 +3,13 @@
 //    crea elementi e aggiunge classi
 
 
-function creazioneElemento( tagHtml, classi) {
+function creazioneElemento( tagHtml, classi, classLivello) {
     let elemento = document.createElement(tagHtml);
     elemento.classList.add(classi);
+    elemento.classList.add(classLivello);
     return elemento;
 }
-
+    
 
 
 document.getElementById('bottone').addEventListener('click',function() {
@@ -17,67 +18,60 @@ document.getElementById('bottone').addEventListener('click',function() {
     griglia.innerHTML = "";
     let livello = document.getElementById('livello').value;
     console.log ("il livello è " + livello);
-
-    // heasy = 1
-    if (livello == 1) {     
-        for (let i = 1; i <= 100; i++) {
-
-            let divbox = creazioneElemento("div", "item");
-
-            divbox.addEventListener("click", function() {
-                this.classList.toggle('active');
-            })
-
-            divbox.append(i);
-            griglia.append(divbox);
     
-            }
-    } 
-    if (livello == 2) {     
-        for (let i = 1; i <= 81; i++) {
-
-            let divbox = creazioneElemento("div", "item");
-
-            divbox.addEventListener("click", function() {
-                this.classList.toggle('active');
-            })
-
-            divbox.append(i);
-            griglia.append(divbox);
     
-            }
-    } 
-    if (livello == 3) {     
-        for (let i = 1; i <= 49; i++) {
 
-            let divbox = creazioneElemento("div", "item");
+    let giri;
+    livello = parseInt(livello);
+    console.log(typeof livello);
 
-            divbox.addEventListener("click", function() {
-                this.classList.toggle('active');
-            })
+    if (livello === 1)  {  
+        console.log(1) 
+        giri = 100;
+    }   else if (livello === 2) {
+        console.log(2) 
+        giri = 81;
+    }   else if (livello === 3) {
+        console.log(3) 
+        giri = 49;
+    }
 
-            divbox.append(i);
-            griglia.append(divbox);
+    console.log("giri:" + giri);
     
-            }
-    } 
+    for (let i = 1; i <= giri; i++) {
+
+        let classeLivello;
+
+        if (livello === 1) {
+            classeLivello = "item_1";
+        }
+
+        if (livello === 2) {
+            classeLivello = "item_2";
+        }
+
+        if (livello === 3) {
+            classeLivello = "item_3"; 
+        }
+
+        let divbox = creazioneElemento("div", "item", classeLivello);
 
 
+        // let divbox = creazioneElemento("div", "item", classeLivello);
+
+        divbox.addEventListener("click", function() {
+            this.classList.toggle('active');
+        })
+
+        divbox.append(i);
+        griglia.append(divbox);
+
+    }
 
 
 })
 
 
 
-// let bottoni = document.querySelectorAll('.item');
-// console.log(bottoni);
-
-// for (let i = 0; i < bottoni.length; i++) {
-//     console.log(bottoni[i]);
-//     let cella = bottoni[i];
-//     cella.addEventListener('click', function() {
-//         this.classList.add('active');
-//     })
-// }
 
 
